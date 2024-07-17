@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4BingeWatchers</title>
+    <link rel="stylesheet" href="./MainStyle.css">
+</head>
+
+<body>
+
+    <div class="hello"><h2 id="logo"><span class="blinking-underscore"></span><span id="logoP1"></span><span id="logoP2">Binge</span><span id="logoP3">Watchers</span></h2></div>
+    
+    
+
+    <div id = "Reccomendations">
+        <div class = "rbox rbtn" onclick="displayRandomMovies()"> <h1>Reccomend Me</h1></div>
+        <div class = "rbox" id = "r1"></div>
+        <div class = "rbox" id = "r2"></div>
+        <div class = "rbox" id = "r3"></div>
+        <div class = "rbox" id = "r4"></div>
+        <div class = "rbox" id = "r5"></div>
+    </div>
+
+    <div class="container">
+        <div id = "operations">
+            <div id="Bucket_header">
+                
+                <p id = "bucket_add"> Enter the movie name :- <input id="item" type="text"></p>
+                <button id = "add_button" onclick="addItem()">Add</button>
+              
+            </div>
+        </div>
+        
+        
+        <!--<div class="box">
+            <h3>Recommended</h3>
+            <hr>
+        </div>-->
+
+        <div class="box">
+            <h3>Bucket List</h3>
+            
+
+            <hr>
+
+            <ol id="item-list">
+                <!-- List items will be added here dynamically -->
+            </ol>
+
+        </div>
+
+
+        <div class="box">
+            <h3>Watched</h3>
+            <hr>
+        </div>
+    </div>
+    <script src="./main_index.js"></script>
+</body>
+
+</html>
