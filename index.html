@@ -5,59 +5,116 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>4BingeWatchers</title>
-    <link rel="stylesheet" href="./MainStyle.css">
+    <link rel="stylesheet" href="MainStyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body>
-
-    <div class="hello"><h2 id="logo"><span class="blinking-underscore"></span><span id="logoP1"></span><span id="logoP2">Binge</span><span id="logoP3">Watchers</span></h2></div>
-    
-    
-
-    <div id = "Reccomendations">
-        <div class = "rbox rbtn" onclick="displayRandomMovies()"> <h1>Reccomend Me</h1></div>
-        <div class = "rbox" id = "r1"></div>
-        <div class = "rbox" id = "r2"></div>
-        <div class = "rbox" id = "r3"></div>
-        <div class = "rbox" id = "r4"></div>
-        <div class = "rbox" id = "r5"></div>
+    <div class="hello">
+        <h2 id="logo"><span class="blinking-underscore"></span><span id="logoP1"></span><span
+                id="logoP2">Binge</span><span id="logoP3">Watchers</span></h2>
+        <h2 id="quote">Where Watching is Organised...</h2>
     </div>
 
+
+
+    <div class="container1">
+        <h1 class="heading"><u>Reccomendations Point</u></h1>
+        <!-- Your content here -->
+    </div>
+    <div id="Reccomendations">
+        <div class="rbox" id="r1" value='1' onclick="directAddMovie"></div>
+        <div class="rbox" id="r2" onclick="addItem()"></div>
+        <div class="rbox" id="r3" onclick="addItem()"></div>
+        <div class="rbox" id="r4" onclick="addItem()"></div>
+        <div class="rbox" id="r5" onclick="addItem()"></div>
+    </div>
+
+    <div id='refresh Button'>
+        <div class="rbox rbtn" onclick="displayRandomMovies()">
+            <h1>Refresh</h1>
+        </div>
+        <div class="rbox rbtn" onclick="openPopup()">
+            <h1>Feed the Feed</h1>
+        </div>
+    </div>
+
+
+    <div class='dashboard'><u>
+            <h1>DASHBOARD</h1>
+        </u></div>
     <div class="container">
-        <div id = "operations">
+
+        <div id="operations">
+            <p id="bucket_add"> Enter the movie name : <br> <input type="text" id="movieInput"
+                    placeholder="Enter a movie"></p>
             <div id="Bucket_header">
-                
-                <p id = "bucket_add"> Enter the movie name :- <input id="item" type="text"></p>
-                <button id = "add_button" onclick="addItem()">Add</button>
-              
             </div>
         </div>
-        
-        
+
+
         <!--<div class="box">
             <h3>Recommended</h3>
             <hr>
         </div>-->
 
-        <div class="box">
-            <h3>Bucket List</h3>
-            
 
-            <hr>
 
-            <ol id="item-list">
-                <!-- List items will be added here dynamically -->
-            </ol>
-
+        <div class="container2">
+            <div class="box" id="watchBox" ondrop="drop(event, 'watchBox')" ondragover="allowDrop(event)">
+                <h3>Watch</h3>
+                <hr>
+            </div>
+            <div class="box" id="likedBox" ondrop="drop(event, 'likedBox')" ondragover="allowDrop(event)">
+                <h3>Liked</h3>
+                <hr>
+            </div>
         </div>
 
 
-        <div class="box">
-            <h3>Watched</h3>
-            <hr>
+
+        <div id="popup">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <h2>What would you like to have ?</h2>
+            <form id="questionForm">
+                <ol>
+                    <li>How are you feeling Today ?
+                        <label><input type="radio" name="q1" value="a"> Happy 😀 </label>
+                        <label><input type="radio" name="q1" value="b"> Sad ☹️</label>
+                        <label><input type="radio" name="q1" value="c"> Bored 🥱</label>
+                        <label><input type="radio" name="q1" value="d"> Neutral</label>
+                    </li>
+                    <li>What genre of movie are you in the mood for ?
+                        <label><input type="radio" name="q2" value="a"> Action</label>
+                        <label><input type="radio" name="q2" value="b"> Comedy</label>
+                        <label><input type="radio" name="q2" value="c"> Drama</label>
+                        <label><input type="radio" name="q2" value="d"> Sci-Fi/Fantasy</label>
+                    </li>
+                    <li>Which type of setting do you prefer for a movie ?
+                        <label><input type="radio" name="q3" value="a"> Historical</label>
+                        <label><input type="radio" name="q3" value="b"> Contemporary</label>
+                        <label><input type="radio" name="q3" value="c">Futuristic</label>
+                        <label><input type="radio" name="q3" value="d"> Fantasy realm</label>
+                    </li>
+                    <li>How important is the emotional depth of the story to you ?
+                        <label><input type="radio" name="q4" value="a"> Very important</label>
+                        <label><input type="radio" name="q4" value="b"> Moderate</label>
+                        <label><input type="radio" name="q4" value="c"> Neutral</label>
+                        <label><input type="radio" name="q4" value="d"> Dosen't Matter</label>
+                    </li>
+                    <li>Which mood or tone would you prefer in a movie ?
+                        <label><input type="radio" name="q5" value="a">Light-hearted and comedic</label>
+                        <label><input type="radio" name="q5" value="b">Intense and suspenseful</label>
+                        <label><input type="radio" name="q5" value="c">Thought-provoking and philosophical</label>
+                        <label><input type="radio" name="q5" value="d">Adventurous and action-packed</label>
+                    </li>
+                </ol>
+                <input type="submit" value="Submit" onclick="displayRandomMovies()" style="cursor: pointer;">
+            </form>
         </div>
-    </div>
-    <script src="./main_Index.js"></script>
+
+
+        <script src="main_index.js"></script>
 </body>
 
 </html>
