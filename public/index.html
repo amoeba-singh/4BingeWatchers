@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4BingeWatchers</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <div class="hello">
+        <h2 id="logo"><span class="blinking-underscore"></span><span id="logoP1"></span><span
+                id="logoP2">Binge</span><span id="logoP3">Watchers</span></h2>
+        <h2 id="quote">Where Watching is Organised...</h2>
+    </div>
+
+
+
+    <div class="container1">
+        <h1 class="heading"><u>Reccomendations Point</u></h1>
+    </div>
+    <div id="Reccomendations">
+        <div class="rbox" id="r1" value='1' onclick="directAddMovie"></div>
+        <div class="rbox" id="r2" onclick="addItem()"></div>
+        <div class="rbox" id="r3" onclick="addItem()"></div>
+        <div class="rbox" id="r4" onclick="addItem()"></div>
+        <div class="rbox" id="r5" onclick="addItem()"></div>
+    </div>
+
+    <div id='refresh Button'>
+        <div class="rbox rbtn" onclick="displayRandomMovies()">
+            <h1>Random Movies</h1>
+        </div>
+        <div class="rbox rbtn" onclick="openPopup()">
+            <h1>Feed the Feed</h1>
+        </div>
+    </div>
+
+
+    <div class='dashboard'><u>
+            <h1>DASHBOARD</h1>
+        </u></div>
+    <div class="container">
+
+        <div id="operations">
+            <p id="bucket_add"> Enter the movie name : <br> <input type="text" id="movieInput"
+                    placeholder="Enter a movie"></p>
+            <div id="Bucket_header">
+            </div>
+        </div>
+
+
+        <div class="container2">
+            <div class="box" id="watchBox" ondrop="drop(event, 'watchBox')" ondragover="allowDrop(event)">
+                <h3>Watch</h3>
+                <hr>
+            </div>
+            <div class="box" id="likedBox" ondrop="drop(event, 'likedBox')" ondragover="allowDrop(event)">
+                <h3>Liked</h3>
+                <hr>
+            </div>
+        </div>
+
+
+
+        <div id="popup">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <h2>What would you like to have ?</h2>
+            <form id="questionForm">
+                <ol>
+                    <li>How are you feeling Today ?
+                        <label><input id="happy" type="radio" name="q1" value="happy"> Happy 😀 </label>
+                        <label><input id="sad" type="radio" name="q1" value="sad"> Sad ☹️</label>
+                        <label><input id="bored" type="radio" name="q1" value="bored"> Bored 🥱</label>
+                        <label><input id="neutral" type="radio" name="q1" value="neutral"> Neutral</label>
+                    </li>
+                    <li>What genre of movie are you in the mood for ?
+                        <label><input type="radio" name="q2" value="action"> Action</label>
+                        <label><input type="radio" name="q2" value="comedy"> Comedy</label>
+                        <label><input type="radio" name="q2" value="drama"> Drama</label>
+                        <label><input type="radio" name="q2" value="science"> Sci-Fi/Fantasy</label>
+                    </li>
+                    <li>Which type of setting do you prefer for a movie ?
+                        <label><input type="radio" name="q3" value="historical"> Historical</label>
+                        <label><input type="radio" name="q3" value="Contemporary"> Contemporary</label>
+                        <label><input type="radio" name="q3" value="Futuristic">Futuristic</label>
+                        <label><input type="radio" name="q3" value="Fantasy"> Fantasy realm</label>
+                    </li>
+                    <li>How important is the emotional depth of the story to you ?
+                        <label><input type="radio" name="q4" value="a"> Very important</label>
+                        <label><input type="radio" name="q4" value="b"> Moderate</label>
+                        <label><input type="radio" name="q4" value="c"> Neutral</label>
+                        <label><input type="radio" name="q4" value="d"> Dosen't Matter</label>
+                    </li>
+                    <li>Which mood or tone would you prefer in a movie ?
+                        <label><input type="radio" name="q5" value="comedic">Light-hearted and comedic</label>
+                        <label><input type="radio" name="q5" value="Intense">Intense and suspenseful</label>
+                        <label><input type="radio" name="q5" value="philosophical">Thought-provoking and philosophical</label>
+                        <label><input type="radio" name="q5" value="Adventurous">Adventurous and action-packed</label>
+                    </li>
+                </ol>
+                <input type="submit" value="Submit" id="recommendBtn" onclick="displayRandomMovies()" style="cursor: pointer;">
+            </form>
+        </div>
+
+        <script src="main_Index.js"></script>
+        <script src="script.js"></script>
+</body>
+
+</html>
